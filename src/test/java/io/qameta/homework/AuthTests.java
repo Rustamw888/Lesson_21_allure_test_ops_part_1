@@ -77,7 +77,9 @@ public class AuthTests {
         });
         step("Должны оказаться на главной странице сайта");
         step("Профиль пользователя должен быть заполнен из Facebook", () -> {
-            step("Имя user_name");
+            step("Имя user_name", () -> {
+                assertEquals(3, 5);
+            });
             step("Login user_login");
         });
         step("Разлогиниваемся");
