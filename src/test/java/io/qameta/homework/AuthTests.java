@@ -58,4 +58,25 @@ public class AuthTests {
         });
         step("Разлогиниваемся");
     }
+
+    @Test
+    @AllureId("10711")
+    @DisplayName("Авторизация через Facebook")
+    @Tags({@Tag("blocker"), @Tag("web")})
+    public void testFacebookAuth() {
+        step("Открываем главную страницу");
+        step("Нажимаем кнопку Авторизация");
+        step("Выбираем способ авторизации через Facebook");
+        step("Авторизуемся как пользователь user_name", () -> {
+            step("Вводим логин user_login");
+            step("Вводим пароль user_password");
+            step("Нажимаем кнопку Войти");
+        });
+        step("Должны оказаться на главной странице сайта");
+        step("Профиль пользователя должен быть заполнен из Facebook", () -> {
+            step("Имя user_name");
+            step("Login user_login");
+        });
+        step("Разлогиниваемся");
+    }
 }
