@@ -11,15 +11,15 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
+@Owner("admin1")
+@Feature("Авторизация")
+@Story("Авторизация через сторонние системы")
 public class AuthTests {
 
     @Test
     @AllureId("10710")
     @DisplayName("Авторизация через Google")
     @Tags({@Tag("blocker"), @Tag("web")})
-    @Story("Авторизация через сторонние системы")
-    @Owner("admin1")
-    @Feature("Авторизация")
     public void testGoogleAuth() {
         step("Открываем главную страницу");
         step("Нажимаем кнопку Авторизация");
