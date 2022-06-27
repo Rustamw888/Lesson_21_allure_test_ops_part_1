@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Owner("admin1")
 @Feature("Авторизация")
@@ -65,9 +64,7 @@ public class AuthTests {
     @DisplayName("Авторизация через Facebook")
     @Tags({@Tag("blocker"), @Tag("web")})
     public void testFacebookAuth() {
-        step("Открываем главную страницу", () -> {
-            assertEquals(3, 5);
-        });
+        step("Открываем главную страницу");
         step("Нажимаем кнопку Авторизация");
         step("Выбираем способ авторизации через Facebook");
         step("Авторизуемся как пользователь user_name", () -> {
@@ -87,9 +84,7 @@ public class AuthTests {
     @DisplayName("Авторизация через Apple")
     @Tags({@Tag("blocker"), @Tag("web")})
     public void testAppleAuth() {
-        step("Открываем главную страницу", () -> {
-            assertEquals(1, 0);
-        });
+        step("Открываем главную страницу");
         step("Нажимаем кнопку Авторизация");
         step("Выбираем способ авторизации через Apple");
         step("Авторизуемся как пользователь user_name", () -> {
