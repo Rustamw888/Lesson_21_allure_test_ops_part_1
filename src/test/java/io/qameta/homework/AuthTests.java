@@ -37,4 +37,25 @@ public class AuthTests {
         });
         step("Разлогиниваемся");
     }
+
+    @Test
+    @AllureId("10712")
+    @DisplayName("Авторизация через GitHub")
+    @Tags({@Tag("blocker"), @Tag("web")})
+    public void testGitHubAuth() {
+        step("Открываем главную страницу");
+        step("Нажимаем кнопку Авторизация");
+        step("Выбираем способ авторизации через GitHub");
+        step("Авторизуемся как пользователь user_name", () -> {
+            step("Вводим логин user_login");
+            step("Вводим пароль user_password");
+            step("Нажимаем кнопку Войти");
+        });
+        step("Должны оказаться на главной странице сайта");
+        step("Профиль пользователя должен быть заполнен из GitHub", () -> {
+            step("Имя user_name");
+            step("Login user_login");
+        });
+        step("Разлогиниваемся");
+    }
 }
