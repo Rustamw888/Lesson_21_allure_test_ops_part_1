@@ -79,4 +79,24 @@ public class AuthTests {
         });
         step("Разлогиниваемся");
     }
+
+    @Test
+    @DisplayName("Авторизация через Apple")
+    @Tags({@Tag("blocker"), @Tag("web")})
+    public void testAppleAuth() {
+        step("Открываем главную страницу");
+        step("Нажимаем кнопку Авторизация");
+        step("Выбираем способ авторизации через Apple");
+        step("Авторизуемся как пользователь user_name", () -> {
+            step("Вводим логин user_login");
+            step("Вводим пароль user_password");
+            step("Нажимаем кнопку Войти");
+        });
+        step("Должны оказаться на главной странице сайта");
+        step("Профиль пользователя должен быть заполнен из Apple", () -> {
+            step("Имя user_name");
+            step("Login user_login");
+        });
+        step("Разлогиниваемся");
+    }
 }
